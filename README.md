@@ -1,6 +1,6 @@
 # RoM-handbook
 
-![A_matrix_2](doc/summary/imgs/Amat_2.png)
+![A_matrix](doc/summary/imgs/Amat.png)
 
 This repository provides source code for **Robustness of Magic(RoM)** calculations.
 This is also the supplemental material for our paper,
@@ -47,8 +47,6 @@ g++ exputils/dot/fast_dot_products.cpp -o exputils/dot/fast_dot_products.exe -st
 ### Tutorial
 
 The tutorial notebook is available at [tutorial.ipynb](tutorial.ipynb).
-
-(todo)
 
 ## License
 
