@@ -1,0 +1,10 @@
+n_qubit=4, seed=0, K=0.01000, label='Inner Product', RoM=4.673960567393348 t1-t0=0.18221
+n_qubit=4, seed=0, K=0.02000, label='Inner Product', RoM=1.8766260943158481 t1-t0=0.02411
+n_qubit=4, seed=0, K=0.03000, label='Inner Product', RoM=1.5042488422262013 t1-t0=0.02799
+n_qubit=4, seed=0, K=0.04000, label='Inner Product', RoM=1.410217274320294 t1-t0=0.03473
+n_qubit=4, seed=0, K=0.05000, label='Inner Product', RoM=1.3993901695578848 t1-t0=0.09528
+n_qubit=4, seed=0, K=0.06000, label='Inner Product', RoM=1.3901436123395159 t1-t0=0.04634
+n_qubit=4, seed=0, K=0.07000, label='Inner Product', RoM=1.386923898110996 t1-t0=0.06351
+n_qubit=4, seed=0, K=0.08000, label='Inner Product', RoM=1.3847326238896922 t1-t0=0.06934
+n_qubit=4, seed=0, K=0.09000, label='Inner Product', RoM=1.3827454661784844 t1-t0=0.06804
+n_qubit=4, seed=0, K=0.10000, label='Inner Product', RoM=1.3796759553692821 t1-t0=0.08486

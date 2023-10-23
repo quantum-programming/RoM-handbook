@@ -14,7 +14,7 @@ def eff_kron_perm_Amat(n1, perm_Amat_1, n2, perm_Amat_2):
     perm_Amat_2_array = perm_Amat_2.toarray()
 
     perm_Amat_array = np.zeros(
-        (len(basis_result), perm_Amat_1.shape[1] * perm_Amat_2.shape[1]), np.int16
+        (len(basis_result), perm_Amat_1.shape[1] * perm_Amat_2.shape[1]), np.int32
     )
 
     for r1, (x1, y1, z1) in enumerate(basis_1):

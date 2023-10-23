@@ -1,6 +1,4 @@
-import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
 from scipy.sparse import hstack
 
 from exputils.eff_kron_perm_Amat import eff_kron_perm_Amat
@@ -19,9 +17,6 @@ from exputils.state.tensor import make_random_tensor_product_state
 # To calculate the RoM with n = 17,
 # turn off caching of perm Amat.
 ####################################
-
-sns.set_theme("paper")
-sns.set(font_scale=1.5)
 
 
 class PermOptRes:
@@ -44,37 +39,29 @@ class PermOptRes:
         return f"PermOptRes(n={(str(self.n) + ',').ljust(3)} RoM={self.RoM:.7f}, shape={self.opt_perm_Amat.shape})"
 
 
+def optimize_RoM_only(n, perm_Amat, single_rho):
+    perm_rho = tensor_product_in_perm_basis(single_rho, n)
+    RoM, _ = calculate_RoM_custom(
+        perm_Amat,
+        perm_rho,
+        method="gurobi",
+        presolve=True,
+        crossover=False,
+        verbose=True,
+    )
+    return RoM
+
+
 def optimize(n, perm_Amat, single_rho):
     eps = 0
     perm_rho = tensor_product_in_perm_basis(single_rho, n)
-    RoM, coeff = calculate_RoM_custom(perm_Amat, perm_rho, method="gurobi")
+    RoM, coeff = calculate_RoM_custom(
+        perm_Amat, perm_rho, method="gurobi", presolve=True, verbose=True
+    )
     basic_indices = abs(coeff) > eps
     basic_coeff = coeff[basic_indices]
     opt_perm_Amat = perm_Amat[:, basic_indices]
     return PermOptRes(n, RoM, basic_coeff, opt_perm_Amat)
-
-
-def plot_result(ns_exact, RoMs_exact, ns_approx, RoMs_approx):
-    fig = plt.figure(figsize=(8, 5))
-    ax = fig.add_subplot(111)
-    ns_list = [ns_exact, ns_approx]
-    RoMs_list = [RoMs_exact, RoMs_approx]
-    labels = ["Exact", "Approximate"]
-    for ns, RoMs, label in zip(ns_list, RoMs_list, labels):
-        sns.scatterplot(x=ns, y=RoMs, label=label, linewidth=0, marker="o", ax=ax)
-
-    ax.set_yscale("log")
-    ax.set_xlabel("n", fontsize=20)
-    ax.set_ylabel("RoM", fontsize=20)
-    ax.set_ylim(ymin=0.9)
-
-    plt.savefig(
-        "permutation_symmetry_approximate.pdf",
-        bbox_inches="tight",
-    )
-
-    # plt.tight_layout()
-    # plt.show()
 
 
 # precalculation with n = 7
@@ -160,7 +147,7 @@ def cg(
 
 
 # extension
-def extend(perm_opt_res_list, single_rho):
+def make_approx_Amat(perm_opt_res_list):
     n = len(perm_opt_res_list)
     kron_Amats = []
     for smaller_n in range(1, n // 2 + 1):
@@ -178,15 +165,22 @@ def extend(perm_opt_res_list, single_rho):
     del dots
     perm_Amat = hstacked_Amat[:, indices]
     del indices
-    res = optimize(n, perm_Amat, single_rho)
-    perm_opt_res_list.append(res)
+    return perm_Amat
+
+
+def save_perm_opt_res(res: PermOptRes):
+    file = f"coeff_Pmat/H_{res.n}.npz"
+    np.savez_compressed(file, coeff=res.coeff, opt_perm_Amat=res.opt_perm_Amat)
+
+
+tough = 21
 
 
 def main():
     seed = 0
     # single_rho = make_random_quantum_state("mixed", 1, seed)
-    single_rho = make_random_quantum_state("pure", 1, seed)
-    # single_rho = make_random_tensor_product_state("H", 1, seed)
+    # single_rho = make_random_quantum_state("pure", 1, seed)
+    single_rho = np.array([1, 2**-0.5, 2**-0.5, 0])
 
     # precalculation with 1 <= n <= 6
 
@@ -198,20 +192,30 @@ def main():
 
     cg(perm_opt_res_list, single_rho)
 
+    for res in perm_opt_res_list[1:]:
+        save_perm_opt_res(res)
+
     exact = len(perm_opt_res_list) - 1
     print(f"{exact = }")
 
+    RoMs = [res.RoM for res in perm_opt_res_list[1:]]
     while len(perm_opt_res_list) < 26:
-        extend(perm_opt_res_list, single_rho)
-        ns_exact = list(range(1, exact + 1))
-        ns_approx = list(range(exact + 1, len(perm_opt_res_list)))
-        RoMs_exact = [perm_opt_res_list[n].RoM for n in ns_exact]
-        RoMs_approx = [perm_opt_res_list[n].RoM for n in ns_approx]
-        plot_result(ns_exact, RoMs_exact, ns_approx, RoMs_approx)
-        with open("result.txt", "w") as f:
-            for res in perm_opt_res_list[1:]:
-                print(res.n, res.RoM, file=f)
-        print(res, sorted(np.abs(res.coeff))[:5])
+        perm_Amat = make_approx_Amat(perm_opt_res_list, single_rho)
+        if len(perm_opt_res_list) >= tough:
+            RoM = optimize_RoM_only(n, perm_Amat, single_rho)
+            RoMs.append(RoM)
+            with open("result.txt", "w") as f:
+                print(*RoMs, sep="\n", file=f)
+            res = optimize(n, perm_Amat, single_rho)
+            perm_opt_res_list.append(res)
+            save_perm_opt_res(perm_opt_res_list[-1])
+        else:
+            res = optimize(n, perm_Amat, single_rho)
+            perm_opt_res_list.append(res)
+            RoMs.append(res.RoM)
+            with open("result.txt", "w") as f:
+                print(*RoMs, sep="\n", file=f)
+            save_perm_opt_res(perm_opt_res_list[-1])
 
 
 if __name__ == "__main__":

@@ -1,43 +1,53 @@
 import matplotlib.pyplot as plt
+from matplotlib.markers import MarkerStyle
 import numpy as np
 import seaborn as sns
+import pandas as pd
 
-file = "result_mixed_cg.txt"
+files = ["result_mixed_cg.txt", "result_pure_cg.txt", "result_H_cg.txt"]
+labels = ["Mixed", "Pure", r"Magic $|{H}\rangle$"]
 exact = 7
 
 sns.set_theme("paper")
-sns.set(font_scale=1.5)
+sns.set(font_scale=1.2)
 
+dfs = []
+for file, label in zip(files, labels):
+    with open(file) as f:
+        lines = f.readlines()
+    ns = []
+    RoMs = []
+    for line in lines:
+        n_str, RoM_str = line.split()
+        ns.append(int(n_str))
+        RoMs.append(float(RoM_str))
+    ns = ns
+    types = [label] * len(ns)
+    isexact = ["Exact" if n <= exact else "Approximate" for n in ns]
+    dfs.append(
+        pd.DataFrame({"n": ns, "RoM": RoMs, "state": types, "solution": isexact})
+    )
 
-with open(file) as f:
-    lines = f.readlines()
+df = pd.concat(dfs)
 
-ns = []
-RoMs = []
-for line in lines:
-    n_str, RoM_str = line.split()
-    ns.append(int(n_str))
-    RoMs.append(float(RoM_str))
-
-
-ns_exact = ns[:exact]
-ns_approx = ns[exact:]
-RoMs_exact = RoMs[:exact]
-RoMs_approx = RoMs[exact:]
-
-fig = plt.figure(figsize=(8, 5))
+fig = plt.figure(figsize=(4, 3))
 ax = fig.add_subplot(111)
-ns_list = [ns_exact, ns_approx]
-RoMs_list = [RoMs_exact, RoMs_approx]
-labels = ["Exact", "Approximate"]
-for ns, RoMs, label in zip(ns_list, RoMs_list, labels):
-    sns.scatterplot(x=ns, y=RoMs, label=label, linewidth=0, marker="o", ax=ax)
+
+sns.scatterplot(data=df, x="n", y="RoM", hue="state", style="solution")
 
 ax.set_yscale("log")
-ax.set_xlabel("n", fontsize=20)
-ax.set_ylabel("RoM", fontsize=20)
-ax.set_ylim(ymin=0.9, ymax=35)
-ax.set_yticks(np.concatenate((np.arange(1, 10), np.arange(10, 40, 10))))
+ax.set_xlabel("n", fontsize=15)
+ax.set_ylabel("RoM", fontsize=15)
+ax.set_ylim(ymin=0.9)
+ax.set_yticks(
+    np.concatenate((np.arange(1, 10), np.arange(10, 100, 10), np.arange(100, 201, 100)))
+)
+
+handles, labels = ax.get_legend_handles_labels()
+handles.insert(4, handles[0])
+labels.insert(4, "")
+ax.legend(handles, labels, loc="upper left", bbox_to_anchor=(1, 1), frameon=False)
+plt.setp(ax.get_legend().get_texts(), fontsize="12")
 
 plt.savefig(
     "permutation_symmetry_approximate.pdf",

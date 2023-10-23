@@ -60,12 +60,7 @@ def get_topK_Amat(
 
         return make_Amat_from_column_index(n_qubit, idxs, data_per_col, rows_per_col)
     else:
-        raise NotImplementedError
-        assert os.path.exists(
-            f"../../data/genData/{n_qubit}_0.npz"
-        ), "if n_qubit == 7, you should generate the genData first."
-
-        get_topK_Amat_from_gen_data(n_qubit, rho_vec, K)
+        raise NotImplementedError  # You should use "fast_dot_products.py"
 
 
 def calculate_RoM_dot(
@@ -82,9 +77,9 @@ def calculate_RoM_dot(
     Tuple[float, np.ndarray, csc_matrix, np.ndarray],
 ]:
     """calculate RoM with dot product method"""
-    assert 1 <= n_qubit <= 6
+    assert 1 <= n_qubit <= 7
     if K is None:
-        K = [1.0, 1.0, 1.0, 0.1, 0.01, 0.0001][n_qubit - 1]
+        K = [1.0, 1.0, 1.0, 0.1, 0.01, 0.001, 0.00001][n_qubit - 1]
     Amat = get_topK_Amat(n_qubit, rho_vec, K)
     RoM, *other = calculate_RoM_custom(
         Amat, rho_vec, verbose, method, return_dual, crossover, presolve

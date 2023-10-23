@@ -25,13 +25,13 @@ def visualize_multiple_Amat(n_qubit: int, seed: int):
         linewidth=2,  # marker edge width
     )
     plt.title(f"n = {n_qubit}", fontsize=20)
-    plt.xlabel("inner product with each column of A matrix", fontsize=20)
-    plt.ylabel("optimal quasi-probability", fontsize=20)
-    plt.tight_layout()
+    plt.xlabel("Inner product with each column of A matrix", fontsize=20)
+    plt.ylabel("Optimal quasi-probability", fontsize=20)
+    plt.subplots_adjust(bottom=0.15, left=0.15, right=0.95, top=0.93)
     plt.savefig(
         os.path.join(os.path.dirname(__file__), f"dot_and_coeff_{n_qubit}.png"),
         dpi=500,
-        bbox_inches="tight",
+        # bbox_inches="tight",
     )
     plt.close()
 

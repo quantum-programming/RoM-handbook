@@ -121,7 +121,7 @@ def LP_with_error_term(
 def calculate_RoM_error(
     n_qubit: int,
     rho_vec: np.ndarray,
-    Amat_generation_method: str = "topK",
+    Amat: Union[np.ndarray, csc_matrix],
     method: str = "scipy",
     verbose: bool = False,
     crossover: bool = True,
@@ -130,24 +130,9 @@ def calculate_RoM_error(
     if verbose:
         print("now generating Amat...")
 
-    max_sz = int(1e6 / (2**n_qubit))
-    K = min(1.0, max_sz / total_stabilizer_group_size(n_qubit))
-
-    if Amat_generation_method == "topK":
-        Amat = get_topK_Amat(n_qubit, rho_vec, K)
-    elif Amat_generation_method == "random":
-        Amat = make_random_Amat(n_qubit, int(total_stabilizer_group_size(n_qubit) * K))
-    elif Amat_generation_method == "tensor_type_dot":
-        Amat = compute_topK_tensor_type_dot_products(n_qubit, rho_vec, max_sz)[0]
-    else:
-        raise ValueError(
-            "Amat_generation_method must be 'topK' or 'random' or 'tensor_type_dot',"
-            f"but {Amat_generation_method} is given."
-        )
-
     predicted_error_coeff = 1.0
 
-    for phase in range(2):
+    for phase in range(3):
         if verbose:
             print(
                 "done",
@@ -164,15 +149,18 @@ def calculate_RoM_error(
             crossover=crossover,
             presolve=presolve,
         )
-        Amat = Amat[:, np.abs(coeffs) > 1e-10]
-        coeffs = coeffs[np.abs(coeffs) > 1e-10]
-        assert np.allclose(errors, rho_vec - Amat @ coeffs)
+        Amat = Amat[:, np.abs(coeffs) > 1e-15]
+        coeffs = coeffs[np.abs(coeffs) > 1e-15]
+        assert np.allclose(errors, rho_vec - Amat @ coeffs), (
+            errors,
+            rho_vec - Amat @ coeffs,
+        )
         errors = rho_vec - Amat @ coeffs
 
         error_RoM, error_coeffs, error_generators = calculate_RoM_FWHT(n_qubit, errors)
 
         RoM = np.sum(np.abs(coeffs)) + error_RoM
-        predicted_error_coeff = min(1.0, error_RoM / (np.sum(np.abs(errors)) + 1e-10))
+        predicted_error_coeff = min(10.0, error_RoM / (np.sum(np.abs(errors)) + 1e-10))
         if verbose:
             print(f"{predicted_error_coeff=}")
 
