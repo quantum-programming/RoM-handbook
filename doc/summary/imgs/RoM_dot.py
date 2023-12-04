@@ -18,10 +18,6 @@ from exputils.stabilizer_group import total_stabilizer_group_size
 from exputils.state.random import make_random_quantum_state
 from exputils.state.tensor import make_random_tensor_product_state
 
-sns.set_theme("paper")
-colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
-sns.set(font_scale=1.5)
-
 
 def make_rho_vec(rho_vec_method: str, n_qubit: int, seed: int):
     if rho_vec_method == "mixed":
@@ -166,7 +162,7 @@ def visualize_performance(n_qubit, maxK, kind):
     global topK_Amat, cover_Amat, log_file_name
 
     log_file_name = os.path.join(
-        os.path.dirname(__file__), f"result_RoM_dot_{kind}_{n_qubit}_data.txt"
+        os.path.dirname(__file__), f"result_RoM_dot/{kind}_{n_qubit}_data.txt"
     )
 
     cover_Amat = generators_to_Amat(n_qubit, make_cover_info(n_qubit)[0])
@@ -186,6 +182,7 @@ def visualize_performance(n_qubit, maxK, kind):
     )
     with open(log_file_name, mode="a") as f:
         print(f"{RoM_exact=}", file=f)
+
     if n_qubit <= 4:
         actual = calculate_RoM_actual(n_qubit, rho_vec, method="gurobi")[0]
         print(RoM_exact, actual)
@@ -198,12 +195,7 @@ def visualize_performance(n_qubit, maxK, kind):
         wrapper_of_calculate_RoM_dot,
         lambda *a, **k: (RoM_exact, None),
     ]
-    plot_colors = [colors[seed], colors[seed], "black"]
-    markers = ["o", "o", None]
-    alphas = [0.3, 1, 0.5]
-    for label, func, color, marker, alpha in zip(
-        methods, functions, plot_colors, markers, alphas
-    ):
+    for label, func in zip(methods, functions):
         RoMs = []
         for K in np.linspace(0.1, 1.0, 10) * maxK:
             t0 = time.perf_counter()
@@ -237,26 +229,6 @@ def visualize_performance(n_qubit, maxK, kind):
                     file=f,
                 )
 
-        sns.lineplot(
-            data=pd.DataFrame({"K": np.linspace(0.1, 1.0, 10) * maxK, "RoM": RoMs}),
-            x="K",
-            y="RoM",
-            color=color,
-            label=label,
-            alpha=alpha,
-            marker=marker,
-            linestyle="--" if label == "Exact RoM" else "-",
-            zorder=1 if label == "Exact RoM" else 2,
-        )
-
-    plt.title(f"n = {n_qubit}", fontsize=20)
-    plt.xlabel("K", fontsize=20)
-    plt.ylabel("Approximate value of RoM", fontsize=20)
-    plt.subplots_adjust(bottom=0.15, left=0.15, right=0.95, top=0.93)
-    plt.savefig(
-        os.path.join(os.path.dirname(__file__), f"RoM_dot_{kind}_{n_qubit}.pdf"),
-        # bbox_inches="tight",
-    )
     print("done")
 
 
@@ -275,6 +247,6 @@ if __name__ == "__main__":
     # We run the following one by one with comment out and
     # saved the results and plotted them after all the runs are done.
 
-    visualize_performance(7, 0.00001, "mixed")
-    visualize_performance(7, 0.00001, "pure")
-    visualize_performance(7, 0.00001, "tensor")
+    # visualize_performance(7, 0.00001, "mixed")
+    # visualize_performance(7, 0.00001, "pure")
+    # visualize_performance(7, 0.00001, "tensor")

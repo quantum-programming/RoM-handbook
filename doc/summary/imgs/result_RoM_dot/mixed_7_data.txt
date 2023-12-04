@@ -1,0 +1,21 @@
+RoM_exact = 2.1042709222255307
+n_qubit=7, seed=0, K=0.00000, label='Random', RoM=6.93051519680737 t1-t0=345.30748
+n_qubit=7, seed=0, K=0.00000, label='Random', RoM=5.697475798429764 t1-t0=487.46238
+n_qubit=7, seed=0, K=0.00000, label='Random', RoM=5.248480045110454 t1-t0=648.99574
+n_qubit=7, seed=0, K=0.00000, label='Random', RoM=4.969785284165887 t1-t0=830.35937
+n_qubit=7, seed=0, K=0.00001, label='Random', RoM=4.790503194019863 t1-t0=981.39051
+n_qubit=7, seed=0, K=0.00001, label='Random', RoM=4.655498631113125 t1-t0=1124.51715
+n_qubit=7, seed=0, K=0.00001, label='Random', RoM=4.535108771012979 t1-t0=1226.73694
+n_qubit=7, seed=0, K=0.00001, label='Random', RoM=4.44326908607904 t1-t0=1420.12706
+n_qubit=7, seed=0, K=0.00001, label='Random', RoM=4.367035367200915 t1-t0=1529.37213
+n_qubit=7, seed=0, K=0.00001, label='Random', RoM=4.298075325900432 t1-t0=1841.96732
+n_qubit=7, seed=0, K=0.00000, label='Inner Product', RoM=2.7193489794224655 t1-t0=223.20698
+n_qubit=7, seed=0, K=0.00000, label='Inner Product', RoM=2.155370923007685 t1-t0=302.86944
+n_qubit=7, seed=0, K=0.00000, label='Inner Product', RoM=2.125716884419653 t1-t0=350.75193
+n_qubit=7, seed=0, K=0.00000, label='Inner Product', RoM=2.117905468018397 t1-t0=408.98125
+n_qubit=7, seed=0, K=0.00001, label='Inner Product', RoM=2.1140113447455513 t1-t0=527.96713
+n_qubit=7, seed=0, K=0.00001, label='Inner Product', RoM=2.1118649947219224 t1-t0=593.46787
+n_qubit=7, seed=0, K=0.00001, label='Inner Product', RoM=2.1103116923369125 t1-t0=660.11164
+n_qubit=7, seed=0, K=0.00001, label='Inner Product', RoM=2.1091196426646905 t1-t0=803.98860
+n_qubit=7, seed=0, K=0.00001, label='Inner Product', RoM=2.1082396808135555 t1-t0=878.60365
+n_qubit=7, seed=0, K=0.00001, label='Inner Product', RoM=2.1076267488349822 t1-t0=986.01701

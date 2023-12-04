@@ -64,7 +64,7 @@ def plot_Amat():
     )
 
     plt.savefig(
-        os.path.join(os.path.dirname(__file__), "Amat.png"),
+        os.path.join(os.path.dirname(__file__), "Amat.pdf"),
         bbox_inches="tight",
         pad_inches=0.1,
         dpi=500,

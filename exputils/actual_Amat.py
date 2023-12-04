@@ -5,9 +5,9 @@ from typing import Dict, List
 import numpy as np
 import scipy.sparse
 from scipy.sparse import csc_matrix
-from tqdm.auto import tqdm
 
 from exputils.stabilizer_group import generator_to_group, pauli_str_to_idx
+from exputils.math.fwht import sylvesters
 
 
 @lru_cache
@@ -25,26 +25,24 @@ def get_actual_Amats() -> Dict[int, csc_matrix]:
 
 
 def generators_to_Amat(n_qubit: int, generators: List[List[str]]) -> csc_matrix:
-    data = []
-    rows = []
-    cols = np.array(
-        [np.arange((2**n_qubit) * len(generators)) for _ in range(2**n_qubit)]
-    ).T.flatten()
-    signs = [
-        [
-            (1 if bin(sign_bit & idx)[1:].count("1") % 2 == 0 else -1)
-            for idx in range(1 << n_qubit)
-        ]
-        for sign_bit in range(1 << n_qubit)
-    ]
-    for generator in tqdm(generators, desc="generators_to_Amat", leave=False):
+    block_sz = 4**n_qubit
+    sz = len(generators) * (2**n_qubit)  # width of Amat
+    nnz = sz * (2**n_qubit)  # number of non-zero elements of Amat
+
+    rows_per_col = np.zeros(nnz, dtype=np.int32)
+    data_per_col = np.zeros(nnz, dtype=np.int8)
+    for i, generator in enumerate(generators):
         group = generator_to_group(n_qubit, generator)
-        for sign_bit in range(1 << n_qubit):
-            for idx, pauli in enumerate(group):
-                data.append(signs[sign_bit][idx] * (1 if pauli[0] != "-" else -1))
-                rows.append(pauli_str_to_idx(n_qubit, pauli.replace("-", "")))
-    return csc_matrix(
-        (data, (rows, cols)),
-        shape=(1 << (2 * n_qubit), len(generators) * (1 << n_qubit)),
-        dtype=np.int8,
-    )
+        data = []
+        rows = []
+        for pauli in group:
+            data.append(1 if pauli[0] != "-" else -1)
+            rows.append(pauli_str_to_idx(n_qubit, pauli.replace("-", "")))
+        rows_per_col[i * block_sz : (i + 1) * block_sz] = np.tile(rows, 2**n_qubit)
+        data_per_col[i * block_sz : (i + 1) * block_sz] = np.tile(data, 2**n_qubit)
+
+    H = sylvesters(n_qubit)
+    indptr = np.arange(sz + 1) * (2**n_qubit)
+    indices = rows_per_col
+    data = data_per_col * np.tile(H.flatten().astype(np.int8), len(generators))
+    return csc_matrix((data, indices, indptr), shape=(4**n_qubit, sz))

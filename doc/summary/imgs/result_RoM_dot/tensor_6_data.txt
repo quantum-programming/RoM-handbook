@@ -1,0 +1,35 @@
+RoM = 1.629827014832403
+# of violations: 220806
+RoM = 1.503521483312967
+# of violations: 0
+RoM_exact=1.503521483312967
+n_qubit=6, seed=0, K=0.00010, label='Random', RoM=9.692628667158067 t1-t0=17.34924
+n_qubit=6, seed=0, K=0.00020, label='Random', RoM=7.675536212196243 t1-t0=31.14087
+n_qubit=6, seed=0, K=0.00030, label='Random', RoM=6.865824770105289 t1-t0=45.45250
+n_qubit=6, seed=0, K=0.00040, label='Random', RoM=6.195037932618387 t1-t0=59.44506
+n_qubit=6, seed=0, K=0.00050, label='Random', RoM=6.043909606249753 t1-t0=77.73796
+n_qubit=6, seed=0, K=0.00060, label='Random', RoM=5.675197376409275 t1-t0=96.95967
+n_qubit=6, seed=0, K=0.00070, label='Random', RoM=5.6373515082847465 t1-t0=103.62926
+n_qubit=6, seed=0, K=0.00080, label='Random', RoM=5.3866333424379 t1-t0=123.29524
+n_qubit=6, seed=0, K=0.00090, label='Random', RoM=5.090707305548743 t1-t0=153.64774
+n_qubit=6, seed=0, K=0.00100, label='Random', RoM=5.160055713938492 t1-t0=158.49362
+n_qubit=6, seed=0, K=0.00010, label='Inner Product', RoM=1.9846873073802318 t1-t0=18.40064
+n_qubit=6, seed=0, K=0.00020, label='Inner Product', RoM=1.8182538990229289 t1-t0=35.52325
+n_qubit=6, seed=0, K=0.00030, label='Inner Product', RoM=1.762040818899782 t1-t0=44.98156
+n_qubit=6, seed=0, K=0.00040, label='Inner Product', RoM=1.7248726514827633 t1-t0=55.68293
+n_qubit=6, seed=0, K=0.00050, label='Inner Product', RoM=1.70261058074424 t1-t0=85.29444
+n_qubit=6, seed=0, K=0.00060, label='Inner Product', RoM=1.6807026493144255 t1-t0=98.56891
+n_qubit=6, seed=0, K=0.00070, label='Inner Product', RoM=1.6692461994045331 t1-t0=114.42149
+n_qubit=6, seed=0, K=0.00080, label='Inner Product', RoM=1.6551665509732003 t1-t0=105.40990
+n_qubit=6, seed=0, K=0.00090, label='Inner Product', RoM=1.6484293223151085 t1-t0=128.52927
+n_qubit=6, seed=0, K=0.00100, label='Inner Product', RoM=1.64137268314661 t1-t0=122.78095
+n_qubit=6, seed=0, K=0.00010, label='Exact RoM', RoM=1.503521483312967 t1-t0=0.00001
+n_qubit=6, seed=0, K=0.00020, label='Exact RoM', RoM=1.503521483312967 t1-t0=0.00001
+n_qubit=6, seed=0, K=0.00030, label='Exact RoM', RoM=1.503521483312967 t1-t0=0.00000
+n_qubit=6, seed=0, K=0.00040, label='Exact RoM', RoM=1.503521483312967 t1-t0=0.00000
+n_qubit=6, seed=0, K=0.00050, label='Exact RoM', RoM=1.503521483312967 t1-t0=0.00000
+n_qubit=6, seed=0, K=0.00060, label='Exact RoM', RoM=1.503521483312967 t1-t0=0.00000
+n_qubit=6, seed=0, K=0.00070, label='Exact RoM', RoM=1.503521483312967 t1-t0=0.00000
+n_qubit=6, seed=0, K=0.00080, label='Exact RoM', RoM=1.503521483312967 t1-t0=0.00000
+n_qubit=6, seed=0, K=0.00090, label='Exact RoM', RoM=1.503521483312967 t1-t0=0.00000
+n_qubit=6, seed=0, K=0.00100, label='Exact RoM', RoM=1.503521483312967 t1-t0=0.00000

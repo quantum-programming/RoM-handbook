@@ -101,7 +101,6 @@ def stabilizer_group_size_from_gen(generators: List[str]) -> int:
     return (2**n) * len(generators)
 
 
-@njit(cache=True)
 def total_stabilizer_group_size(n: int) -> int:
     ret = 2**n
     for k in range(n):
