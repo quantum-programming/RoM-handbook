@@ -2,7 +2,8 @@
 
 ![A_matrix](doc/summary/imgs/Amat.png)
 
-This repository provides source code for **Robustness of Magic(RoM)** calculations.
+This repository provides source code for **Robustness of Magic(RoM)** calculation, **stabilizer fidelity** calculation, and **generating all the pure stabilizer states**.
+
 This is also the supplemental material for our paper,
 **"Handbook for Efficiently Quantifying Robustness of Magic"**(2023).
 
@@ -10,7 +11,7 @@ This is also the supplemental material for our paper,
 
 ### data
 
-The data about A matrix. Please see `data/README.md` for details.
+The data about A matrix, which is used in naive LP (conventional method) for calculating the RoM. Please see `data/README.md` for details.
 
 ### doc
 
@@ -29,20 +30,31 @@ Our source code is written in Python and C++.
 
 #### Python
 
-It is recommended that you prepare a new virtual python environment and run
-`pip install -r requirement.txt`
-to ensure that libraries are compatible.
+It is recommended that you prepare a new virtual python environment and run `pip install -r requirement.txt` to ensure that libraries are compatible.
 
 #### C++
 
 The only file written in C++ is [exputils/dot/fast_dot_products.cpp](exputils/dot/fast_dot_products.cpp),
 which is the most important part of our source code with fully commented.
 
-You need to compile the source code with the following options:
+You need to compile the source code with the following options in the directory where the source code is located.
 
 ```bash
-g++ exputils/dot/fast_dot_products.cpp -o exputils/dot/fast_dot_products.exe -std=c++17 -lz -O3 -fopenmp
+g++ exputils/dot/fast_dot_products.cpp -o exputils/dot/fast_dot_products.exe -std=c++17 -lz -O2 -DNDEBUG -mtune=native -march=native -fopenmp
 ```
+
+The meaning of each option is as follows:
+
+| option | meaning |
+|:---|:---|
+| -o | output file name |
+| -std=c++17 | use C++17 |
+| -lz | use zlib (to use npz files in C++)|
+| -O2 | optimization level 2 (-O3 might be worse than -O2) |
+| -DNDEBUG | disable assertions (if you want to debug, remove this option) |
+| -mtune=native | optimize for the machine you are using |
+| -march=native | optimize for the machine you are using |
+| -fopenmp | use OpenMP (for parallelization) |
 
 ### Tutorial
 
