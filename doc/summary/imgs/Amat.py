@@ -3,7 +3,6 @@ import os
 import matplotlib.patches
 import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.gridspec import GridSpec
 import seaborn as sns
 from _common import make_custom_cmap
 
@@ -12,6 +11,9 @@ from exputils.stabilizer_group import idx_to_pauli_str
 
 sns.set_theme("paper")
 cmap = make_custom_cmap()
+rc = {"mathtext.fontset": "stix"}
+plt.rcParams.update(rc)
+sns.set(font="Times New Roman")
 
 
 def plot_Amat():
@@ -29,8 +31,8 @@ def plot_Amat():
     sns.heatmap(A2, cbar=False, cmap=cmap, ax=ax2)
     ax1.set_aspect("equal", adjustable="box")
     ax2.set_aspect("equal", adjustable="box")
-    ax1.set_title("n = 1", fontsize=25)
-    ax2.set_title("n = 2", fontsize=25)
+    ax1.set_title("$n = 1$", fontsize=25)
+    ax2.set_title("$n = 2$", fontsize=25)
     ax1.set_xticks([])
     ax2.set_xticks([])
     ax1.set_yticks(
@@ -74,4 +76,3 @@ def plot_Amat():
 
 if __name__ == "__main__":
     plot_Amat()
-    # adjust_images()

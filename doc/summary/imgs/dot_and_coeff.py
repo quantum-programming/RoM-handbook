@@ -8,6 +8,9 @@ from exputils.state.random import make_random_quantum_state
 
 sns.set_theme("paper")
 sns.set(font_scale=1.5)
+rc = {"mathtext.fontset": "stix"}
+plt.rcParams.update(rc)
+sns.set(font="Times New Roman")
 
 
 def visualize_multiple_Amat(n_qubit: int, seed: int):
@@ -24,7 +27,7 @@ def visualize_multiple_Amat(n_qubit: int, seed: int):
         s=100,  # marker size
         linewidth=2,  # marker edge width
     )
-    plt.title(f"n = {n_qubit}", fontsize=20)
+    plt.title(f"$n = {n_qubit}$", fontsize=20)
     plt.xlabel("Inner product with each column of A matrix", fontsize=20)
     plt.ylabel("Optimal quasi-probability", fontsize=20)
     plt.subplots_adjust(bottom=0.15, left=0.15, right=0.95, top=0.93)
