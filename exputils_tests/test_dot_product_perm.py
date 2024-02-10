@@ -1,18 +1,25 @@
-import time
+import os
+import warnings
+from importlib.resources import files
+
 import numpy as np
-from tqdm.auto import tqdm
+
 from exputils.perm_Amat import get_perm_Amat, get_row_size
 from exputils.perm_dot import compute_all_dot_products_perm
-from exputils.once.make_perm_Amat_by_LCgraphs import (
-    make_perm_Amat_from_group_to_perm,
-)
-
-from exputils.math.fwht import sylvesters
 
 
 def test_dot_product():
     rng = np.random.default_rng(0)
     for n in range(1, 7 + 1):
+        if not os.path.exists(
+            files("exputils").joinpath(f"../data/LCgraphs/perm_Amat_{n}.npz")
+        ):
+            warnings.warn(
+                f"LCgraphs/perm_Amat_{n}.npz does not exist."
+                "If you need the data, please run make_perm_Amat_by_LCgraphs.py"
+                " in the root directory of stabilizer simulator."
+            )
+            continue
         perm_Amat = get_perm_Amat(n)
         row_size = get_row_size(n)
         test_count = 10 ** ((7 - n) // 2)

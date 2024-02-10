@@ -277,7 +277,8 @@ def generate_perm_Amat(n_max):
 
 
 def main():
-    for n in range(1, 7 + 1):
+    # for n in range(1, 7 + 1):
+    for n in range(7, 7 + 1):
         perm_Amat = make_perm_Amat_from_group_to_perm(n)
         perm_Amat_file = f"data/LCgraphs/perm_Amat_{n}.npz"
         save_npz(perm_Amat_file, perm_Amat)

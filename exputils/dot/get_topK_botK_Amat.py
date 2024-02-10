@@ -35,6 +35,7 @@ def get_topK_botK_Amat(
         if verbose:
             for line in p.stderr:
                 print(line.decode("utf-8", errors="ignore"), end="")
+        p.wait()
     os.remove(rho_vec_filename + ".npz")
     assert p.returncode == 0, f"error in C++ code: {p.returncode=}"
     if verbose:

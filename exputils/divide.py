@@ -68,7 +68,7 @@ def divide_generator(
         left = set(range(n))
         now = []
         for sz in div_sizes:
-            new_elem = tuple(sorted(random.sample(left, sz)))
+            new_elem = tuple(sorted(random.sample(list(left), sz)))
             left -= set(new_elem)
             now.append(new_elem)
         yield tuple(sorted(now))

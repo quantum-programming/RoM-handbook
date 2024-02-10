@@ -12,7 +12,7 @@ from exputils.state.state_in_pauli_basis import state_in_pauli_basis
 def make_random_tensor_product_state(
     kind: str, n_qubit: int, seed: int = 0, check: bool = False
 ) -> np.ndarray:
-    assert kind in ["H", "F", "mixed", "pure"], kind
+    assert kind in ["H", "F", "W", "mixed", "pure"], kind
     if kind == "H":
         # "Robustness of Magic and Symmetries of the Stabiliser Polytope"
         # |H〉 := T |+〉 = 1/√2 (|0〉 + e^{iπ/4} |1〉)
@@ -27,6 +27,13 @@ def make_random_tensor_product_state(
             dtype=np.complex_,
         )
         states = [F_state.copy()] * n_qubit
+    elif kind == "W":
+        # Reference: https://en.wikipedia.org/wiki/W_state
+        # |W〉:= 1/√3 (|001〉 + |010〉 + |100〉)
+        W_state = np.zeros(2**n_qubit, dtype=np.complex_)
+        for i in range(n_qubit):
+            W_state[2**i - 1] = 1 / np.sqrt(n_qubit)
+        states = [W_state.copy()]
     elif kind == "mixed":
         assert 0 <= seed < 1000, f"seed must be in [0, 1000), but {seed=}"
         states = []
