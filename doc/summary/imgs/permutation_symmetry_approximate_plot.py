@@ -7,21 +7,29 @@ import os
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-files = ["result_mixed_cg.txt", "result_pure_cg.txt", "result_H_cg.txt"]
-labels = ["Mixed", "Pure", r"Magic $|H\rangle$"]
+files = ["result_pure_cg.txt", "result_H_cg.txt", "result_mixed_cg.txt"]
+labels = ["Pure", r"Magic $|H\rangle$", "Mixed"]
 exact = 7
 
 sns.set_theme("paper")
-rc = {"mathtext.fontset": "stix"}
+rc = {
+    "mathtext.fontset": "stix",
+    "font.size": 20,
+    "font.family": "Times New Roman",
+    "xtick.labelsize": 15,
+    "ytick.labelsize": 15,
+    "legend.fontsize": 15,
+    "text.usetex": True,
+    "text.latex.preamble": "\\usepackage{amsmath}\n\\usepackage{bm}",
+}
 plt.rcParams.update(rc)
-sns.set(font_scale=1.2, font="Times New Roman")
 
 fig = plt.figure(figsize=(4, 3))
 ax = fig.add_subplot(111)
 
 colors = sns.color_palette("colorblind", 3)
 
-for file, label in zip(files, labels):
+for colorIdx, (file, label) in enumerate(zip(files, labels)):
     ns = []
     RoMs = []
     with open(file) as f:
@@ -34,13 +42,6 @@ for file, label in zip(files, labels):
     small_RoMs = [RoM for n, RoM in zip(ns, RoMs) if n <= exact]
     large_ns = [n for n in ns if n > exact]
     large_RoMs = [RoM for n, RoM in zip(ns, RoMs) if n > exact]
-
-    if label == "Mixed":
-        colorIdx = 0
-    elif label == "Pure":
-        colorIdx = 1
-    else:
-        colorIdx = 2
 
     sns.scatterplot(
         data=pd.DataFrame({"n": small_ns, "RoM": small_RoMs}),
@@ -65,12 +66,15 @@ for file, label in zip(files, labels):
 
 ax.set_yscale("log")
 ax.set_xlabel("$n$", fontsize=15)
-ax.set_ylabel("RoM", fontsize=15)
+ax.set_ylabel(r"$\mathcal{R}(\rho^{\otimes n})$ or  $R_n$", fontsize=15)
 ax.set_ylim(ymin=0.9)
+ax.set_xticks([1, 7, 12, 17, 21])
 ax.set_yticks(
     np.concatenate((np.arange(1, 10), np.arange(10, 100, 10), np.arange(100, 201, 100)))
 )
-ax.legend(frameon=False, loc="upper left", bbox_to_anchor=(1, 1))
+legend = ax.legend(frameon=False, loc="upper left", bbox_to_anchor=(1, 0.95))
+for i in range(6):
+    legend.legendHandles[i]._sizes = [40]
 
 plt.savefig(
     "permutation_symmetry_approximate.pdf",

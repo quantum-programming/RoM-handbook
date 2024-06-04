@@ -6,8 +6,17 @@ import seaborn as sns
 sns.set_theme("paper")
 colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
 rc = {"mathtext.fontset": "stix"}
+rc = {
+    "mathtext.fontset": "stix",
+    "font.size": 25,
+    "font.family": "Times New Roman",
+    "xtick.labelsize": 25,
+    "ytick.labelsize": 25,
+    "legend.fontsize": 23,
+    "text.usetex": True,
+    "text.latex.preamble": "\\usepackage{amsmath}\n\\usepackage{bm}",
+}
 plt.rcParams.update(rc)
-sns.set(font_scale=1.5, font="Times New Roman")
 
 
 def load_result(n: int, kind: str):
@@ -65,8 +74,8 @@ def main():
                     ax=ax,
                 )
 
-            ax.set_xlabel("$K$", fontsize=25)
-            ax.set_ylabel("RoM", fontsize=25)
+            ax.set_xlabel("$K$", fontsize=30)
+            ax.set_ylabel(r"$\hat{\mathcal{R}}_0(\rho)$", fontsize=30)
 
             from matplotlib.ticker import FormatStrFormatter
 

@@ -20,9 +20,17 @@ from exputils.state.tensor import make_random_tensor_product_state
 
 sns.set_theme("paper")
 colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
-rc = {"mathtext.fontset": "stix"}
+rc = {
+    "mathtext.fontset": "stix",
+    "font.size": 20,
+    "font.family": "Times New Roman",
+    "xtick.labelsize": 15,
+    "ytick.labelsize": 15,
+    "legend.fontsize": 15,
+    "text.usetex": True,
+    "text.latex.preamble": "\\usepackage{amsmath}\n\\usepackage{bm}",
+}
 plt.rcParams.update(rc)
-sns.set(font_scale=1.5, font="Times New Roman")
 
 
 def make_rho_vec(rho_vec_method: str, n_qubit: int, seed: int):
@@ -83,7 +91,9 @@ def visualize_performance(n_qubit, maxK, kind, ax: plt.Axes):
     seed = 0
     rho_vec = make_rho_vec(kind, n_qubit, seed)
 
-    topK_Amat = get_topK_botK_Amat(n_qubit, rho_vec, maxK, verbose=True)
+    topK_Amat = get_topK_botK_Amat(
+        n_qubit, rho_vec, maxK, is_dual=False, is_random=False, verbose=True
+    )
 
     RoM_exact = calculate_RoM_actual(n_qubit, rho_vec, method="gurobi")[0]
     with open(log_file_name, mode="a") as f:
@@ -151,8 +161,8 @@ def visualize_performance(n_qubit, maxK, kind, ax: plt.Axes):
             ax=ax,
         )
 
-    ax.set_xlabel("$K$", fontsize=20)
-    ax.set_ylabel("RoM", fontsize=20)
+    ax.set_xlabel("$K$", fontsize=25)
+    ax.set_ylabel(r"$\hat{\mathcal{R}}_0(\rho)$", fontsize=25)
     ax.set_title("(b)", fontsize=25, x=-0.07, y=1.05)
 
 
@@ -170,8 +180,8 @@ def visualize_multiple_Amat(n_qubit: int, seed: int, ax: plt.Axes):
         linewidth=2,  # marker edge width
         ax=ax,
     )
-    ax.set_xlabel("Unnormalized Overlap", fontsize=20)
-    ax.set_ylabel("Weight", fontsize=20)
+    ax.set_xlabel(r"Unnormalized Overlap $\mathrm{Tr}[\rho\sigma_j]$", fontsize=25)
+    ax.set_ylabel(r"Weight $x_j$", fontsize=25)
     ax.set_title("(a)", fontsize=25, x=-0.15, y=1.05)
 
 

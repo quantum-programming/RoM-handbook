@@ -60,3 +60,220 @@ n_qubit=4, seed=0, K=0.07000, label='Exact RoM', RoM=1.3762097510033622 t1-t0=0.
 n_qubit=4, seed=0, K=0.08000, label='Exact RoM', RoM=1.3762097510033622 t1-t0=0.00000
 n_qubit=4, seed=0, K=0.09000, label='Exact RoM', RoM=1.3762097510033622 t1-t0=0.00000
 n_qubit=4, seed=0, K=0.10000, label='Exact RoM', RoM=1.3762097510033622 t1-t0=0.00000
+RoM_exact=1.3762097510033615
+n_qubit=4, seed=0, K=0.01000, label='Random', RoM=4.886552786236437 t1-t0=0.07224
+n_qubit=4, seed=0, K=0.02000, label='Random', RoM=2.8296107130091794 t1-t0=0.09726
+n_qubit=4, seed=0, K=0.03000, label='Random', RoM=2.3810048679658773 t1-t0=0.10654
+n_qubit=4, seed=0, K=0.04000, label='Random', RoM=2.266183747509694 t1-t0=0.12924
+n_qubit=4, seed=0, K=0.05000, label='Random', RoM=2.060910692995447 t1-t0=0.12371
+n_qubit=4, seed=0, K=0.06000, label='Random', RoM=2.0597573849987083 t1-t0=0.10537
+n_qubit=4, seed=0, K=0.07000, label='Random', RoM=1.8996412480073999 t1-t0=0.12188
+n_qubit=4, seed=0, K=0.08000, label='Random', RoM=1.8184395420432384 t1-t0=0.21552
+n_qubit=4, seed=0, K=0.09000, label='Random', RoM=1.821809616108066 t1-t0=0.12884
+n_qubit=4, seed=0, K=0.10000, label='Random', RoM=1.798676838887341 t1-t0=0.15520
+n_qubit=4, seed=0, K=0.01000, label='Overlap', RoM=4.673960567440599 t1-t0=0.05298
+n_qubit=4, seed=0, K=0.02000, label='Overlap', RoM=1.8766260943179502 t1-t0=0.11377
+n_qubit=4, seed=0, K=0.03000, label='Overlap', RoM=1.5042488422261875 t1-t0=0.09422
+n_qubit=4, seed=0, K=0.04000, label='Overlap', RoM=1.410217274315908 t1-t0=0.08505
+n_qubit=4, seed=0, K=0.05000, label='Overlap', RoM=1.3993901695603292 t1-t0=0.09903
+n_qubit=4, seed=0, K=0.06000, label='Overlap', RoM=1.390143612350426 t1-t0=0.10170
+n_qubit=4, seed=0, K=0.07000, label='Overlap', RoM=1.386923898110424 t1-t0=0.11069
+n_qubit=4, seed=0, K=0.08000, label='Overlap', RoM=1.3847326238071884 t1-t0=0.12737
+n_qubit=4, seed=0, K=0.09000, label='Overlap', RoM=1.3827454661783796 t1-t0=0.14037
+n_qubit=4, seed=0, K=0.10000, label='Overlap', RoM=1.3796759553718465 t1-t0=0.16846
+n_qubit=4, seed=0, K=0.01000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.02000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.03000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.04000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.05000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.06000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.07000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.08000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.09000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.10000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+RoM_exact=1.3762097510033615
+n_qubit=4, seed=0, K=0.01000, label='Random', RoM=4.886552786236437 t1-t0=0.04980
+n_qubit=4, seed=0, K=0.02000, label='Random', RoM=2.8296107130091794 t1-t0=0.05879
+n_qubit=4, seed=0, K=0.03000, label='Random', RoM=2.3810048679658773 t1-t0=0.07910
+n_qubit=4, seed=0, K=0.04000, label='Random', RoM=2.266183747509694 t1-t0=0.09343
+n_qubit=4, seed=0, K=0.05000, label='Random', RoM=2.060910692995447 t1-t0=0.09703
+n_qubit=4, seed=0, K=0.06000, label='Random', RoM=2.0597573849987083 t1-t0=0.15962
+n_qubit=4, seed=0, K=0.07000, label='Random', RoM=1.8996412480073999 t1-t0=0.17397
+n_qubit=4, seed=0, K=0.08000, label='Random', RoM=1.8184395420432384 t1-t0=0.35475
+n_qubit=4, seed=0, K=0.09000, label='Random', RoM=1.821809616108066 t1-t0=0.19596
+n_qubit=4, seed=0, K=0.10000, label='Random', RoM=1.798676838887341 t1-t0=0.17996
+n_qubit=4, seed=0, K=0.01000, label='Overlap', RoM=4.673960567440599 t1-t0=0.05231
+n_qubit=4, seed=0, K=0.02000, label='Overlap', RoM=1.8766260943179502 t1-t0=0.05300
+n_qubit=4, seed=0, K=0.03000, label='Overlap', RoM=1.5042488422261875 t1-t0=0.07559
+n_qubit=4, seed=0, K=0.04000, label='Overlap', RoM=1.410217274315908 t1-t0=0.09308
+n_qubit=4, seed=0, K=0.05000, label='Overlap', RoM=1.3993901695603292 t1-t0=0.11641
+n_qubit=4, seed=0, K=0.06000, label='Overlap', RoM=1.390143612350426 t1-t0=0.10638
+n_qubit=4, seed=0, K=0.07000, label='Overlap', RoM=1.386923898110424 t1-t0=0.11408
+n_qubit=4, seed=0, K=0.08000, label='Overlap', RoM=1.3847326238071884 t1-t0=0.12737
+n_qubit=4, seed=0, K=0.09000, label='Overlap', RoM=1.3827454661783796 t1-t0=0.14295
+n_qubit=4, seed=0, K=0.10000, label='Overlap', RoM=1.3796759553718465 t1-t0=0.14215
+n_qubit=4, seed=0, K=0.01000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.02000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.03000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.04000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.05000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.06000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.07000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.08000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.09000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.10000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+RoM_exact=1.3762097510033615
+n_qubit=4, seed=0, K=0.01000, label='Random', RoM=4.886552786236437 t1-t0=0.06162
+n_qubit=4, seed=0, K=0.02000, label='Random', RoM=2.8296107130091794 t1-t0=0.08142
+n_qubit=4, seed=0, K=0.03000, label='Random', RoM=2.3810048679658773 t1-t0=0.09882
+n_qubit=4, seed=0, K=0.04000, label='Random', RoM=2.266183747509694 t1-t0=0.11773
+n_qubit=4, seed=0, K=0.05000, label='Random', RoM=2.060910692995447 t1-t0=0.12800
+n_qubit=4, seed=0, K=0.06000, label='Random', RoM=2.0597573849987083 t1-t0=0.23461
+n_qubit=4, seed=0, K=0.07000, label='Random', RoM=1.8996412480073999 t1-t0=0.30132
+n_qubit=4, seed=0, K=0.08000, label='Random', RoM=1.8184395420432384 t1-t0=0.29483
+n_qubit=4, seed=0, K=0.09000, label='Random', RoM=1.821809616108066 t1-t0=0.30288
+n_qubit=4, seed=0, K=0.10000, label='Random', RoM=1.798676838887341 t1-t0=0.34042
+n_qubit=4, seed=0, K=0.01000, label='Overlap', RoM=4.673960567440599 t1-t0=0.03908
+n_qubit=4, seed=0, K=0.02000, label='Overlap', RoM=1.8766260943179502 t1-t0=0.11060
+n_qubit=4, seed=0, K=0.03000, label='Overlap', RoM=1.5042488422261875 t1-t0=0.15264
+n_qubit=4, seed=0, K=0.04000, label='Overlap', RoM=1.410217274315908 t1-t0=0.12881
+n_qubit=4, seed=0, K=0.05000, label='Overlap', RoM=1.3993901695603292 t1-t0=0.15971
+n_qubit=4, seed=0, K=0.06000, label='Overlap', RoM=1.390143612350426 t1-t0=0.13861
+n_qubit=4, seed=0, K=0.07000, label='Overlap', RoM=1.386923898110424 t1-t0=0.23267
+n_qubit=4, seed=0, K=0.08000, label='Overlap', RoM=1.3847326238071884 t1-t0=0.17749
+n_qubit=4, seed=0, K=0.09000, label='Overlap', RoM=1.3827454661783796 t1-t0=0.21587
+n_qubit=4, seed=0, K=0.10000, label='Overlap', RoM=1.3796759553718465 t1-t0=0.15352
+n_qubit=4, seed=0, K=0.01000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.02000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.03000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.04000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.05000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.06000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.07000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.08000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.09000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.10000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+RoM_exact=1.3762097510033615
+n_qubit=4, seed=0, K=0.01000, label='Random', RoM=4.886552786236437 t1-t0=0.07811
+n_qubit=4, seed=0, K=0.02000, label='Random', RoM=2.8296107130091794 t1-t0=0.09724
+n_qubit=4, seed=0, K=0.03000, label='Random', RoM=2.3810048679658773 t1-t0=0.10870
+n_qubit=4, seed=0, K=0.04000, label='Random', RoM=2.266183747509694 t1-t0=0.13694
+n_qubit=4, seed=0, K=0.05000, label='Random', RoM=2.060910692995447 t1-t0=0.15744
+n_qubit=4, seed=0, K=0.06000, label='Random', RoM=2.0597573849987083 t1-t0=0.18049
+n_qubit=4, seed=0, K=0.07000, label='Random', RoM=1.8996412480073999 t1-t0=0.16680
+n_qubit=4, seed=0, K=0.08000, label='Random', RoM=1.8184395420432384 t1-t0=0.42774
+n_qubit=4, seed=0, K=0.09000, label='Random', RoM=1.821809616108066 t1-t0=0.30969
+n_qubit=4, seed=0, K=0.10000, label='Random', RoM=1.798676838887341 t1-t0=0.37031
+n_qubit=4, seed=0, K=0.01000, label='Overlap', RoM=4.673960567440599 t1-t0=0.07112
+n_qubit=4, seed=0, K=0.02000, label='Overlap', RoM=1.8766260943179502 t1-t0=0.07856
+n_qubit=4, seed=0, K=0.03000, label='Overlap', RoM=1.5042488422261875 t1-t0=0.11558
+n_qubit=4, seed=0, K=0.04000, label='Overlap', RoM=1.410217274315908 t1-t0=0.19144
+n_qubit=4, seed=0, K=0.05000, label='Overlap', RoM=1.3993901695603292 t1-t0=0.23445
+n_qubit=4, seed=0, K=0.06000, label='Overlap', RoM=1.390143612350426 t1-t0=0.10128
+n_qubit=4, seed=0, K=0.07000, label='Overlap', RoM=1.386923898110424 t1-t0=0.24999
+n_qubit=4, seed=0, K=0.08000, label='Overlap', RoM=1.3847326238071884 t1-t0=0.32495
+n_qubit=4, seed=0, K=0.09000, label='Overlap', RoM=1.3827454661783796 t1-t0=0.19743
+n_qubit=4, seed=0, K=0.10000, label='Overlap', RoM=1.3796759553718465 t1-t0=0.20680
+n_qubit=4, seed=0, K=0.01000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.02000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.03000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.04000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.05000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.06000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.07000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.08000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.09000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.10000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+RoM_exact=1.3762097510033615
+n_qubit=4, seed=0, K=0.01000, label='Random', RoM=4.886552786236437 t1-t0=0.02554
+n_qubit=4, seed=0, K=0.02000, label='Random', RoM=2.8296107130091794 t1-t0=0.02919
+n_qubit=4, seed=0, K=0.03000, label='Random', RoM=2.3810048679658773 t1-t0=0.03844
+n_qubit=4, seed=0, K=0.04000, label='Random', RoM=2.266183747509694 t1-t0=0.04180
+n_qubit=4, seed=0, K=0.05000, label='Random', RoM=2.060910692995447 t1-t0=0.05222
+n_qubit=4, seed=0, K=0.06000, label='Random', RoM=2.0597573849987083 t1-t0=0.06094
+n_qubit=4, seed=0, K=0.07000, label='Random', RoM=1.8996412480073999 t1-t0=0.06919
+n_qubit=4, seed=0, K=0.08000, label='Random', RoM=1.8184395420432384 t1-t0=0.15769
+n_qubit=4, seed=0, K=0.09000, label='Random', RoM=1.821809616108066 t1-t0=0.08164
+n_qubit=4, seed=0, K=0.10000, label='Random', RoM=1.798676838887341 t1-t0=0.10825
+n_qubit=4, seed=0, K=0.01000, label='Overlap', RoM=4.673960567440599 t1-t0=0.02185
+n_qubit=4, seed=0, K=0.02000, label='Overlap', RoM=1.8766260943179502 t1-t0=0.03078
+n_qubit=4, seed=0, K=0.03000, label='Overlap', RoM=1.5042488422261875 t1-t0=0.04190
+n_qubit=4, seed=0, K=0.04000, label='Overlap', RoM=1.410217274315908 t1-t0=0.04687
+n_qubit=4, seed=0, K=0.05000, label='Overlap', RoM=1.3993901695603292 t1-t0=0.05885
+n_qubit=4, seed=0, K=0.06000, label='Overlap', RoM=1.390143612350426 t1-t0=0.05906
+n_qubit=4, seed=0, K=0.07000, label='Overlap', RoM=1.386923898110424 t1-t0=0.06459
+n_qubit=4, seed=0, K=0.08000, label='Overlap', RoM=1.3847326238071884 t1-t0=0.07289
+n_qubit=4, seed=0, K=0.09000, label='Overlap', RoM=1.3827454661783796 t1-t0=0.08405
+n_qubit=4, seed=0, K=0.10000, label='Overlap', RoM=1.3796759553718465 t1-t0=0.08650
+n_qubit=4, seed=0, K=0.01000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.02000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.03000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.04000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.05000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.06000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.07000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.08000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.09000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.10000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+RoM_exact=1.3762097510033615
+n_qubit=4, seed=0, K=0.01000, label='Random', RoM=4.886552786236437 t1-t0=0.02697
+n_qubit=4, seed=0, K=0.02000, label='Random', RoM=2.8296107130091794 t1-t0=0.03322
+n_qubit=4, seed=0, K=0.03000, label='Random', RoM=2.3810048679658773 t1-t0=0.03765
+n_qubit=4, seed=0, K=0.04000, label='Random', RoM=2.266183747509694 t1-t0=0.04736
+n_qubit=4, seed=0, K=0.05000, label='Random', RoM=2.060910692995447 t1-t0=0.05118
+n_qubit=4, seed=0, K=0.06000, label='Random', RoM=2.0597573849987083 t1-t0=0.05807
+n_qubit=4, seed=0, K=0.07000, label='Random', RoM=1.8996412480073999 t1-t0=0.07073
+n_qubit=4, seed=0, K=0.08000, label='Random', RoM=1.8184395420432384 t1-t0=0.15642
+n_qubit=4, seed=0, K=0.09000, label='Random', RoM=1.821809616108066 t1-t0=0.07752
+n_qubit=4, seed=0, K=0.10000, label='Random', RoM=1.798676838887341 t1-t0=0.09864
+n_qubit=4, seed=0, K=0.01000, label='Overlap', RoM=4.673960567440599 t1-t0=0.02005
+n_qubit=4, seed=0, K=0.02000, label='Overlap', RoM=1.8766260943179502 t1-t0=0.02774
+n_qubit=4, seed=0, K=0.03000, label='Overlap', RoM=1.5042488422261875 t1-t0=0.03432
+n_qubit=4, seed=0, K=0.04000, label='Overlap', RoM=1.410217274315908 t1-t0=0.04265
+n_qubit=4, seed=0, K=0.05000, label='Overlap', RoM=1.3993901695603292 t1-t0=0.05770
+n_qubit=4, seed=0, K=0.06000, label='Overlap', RoM=1.390143612350426 t1-t0=0.05548
+n_qubit=4, seed=0, K=0.07000, label='Overlap', RoM=1.386923898110424 t1-t0=0.06672
+n_qubit=4, seed=0, K=0.08000, label='Overlap', RoM=1.3847326238071884 t1-t0=0.07343
+n_qubit=4, seed=0, K=0.09000, label='Overlap', RoM=1.3827454661783796 t1-t0=0.08193
+n_qubit=4, seed=0, K=0.10000, label='Overlap', RoM=1.3796759553718465 t1-t0=0.08761
+n_qubit=4, seed=0, K=0.01000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.02000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.03000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.04000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.05000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.06000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.07000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.08000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.09000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.10000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+RoM_exact=1.3762097510033615
+n_qubit=4, seed=0, K=0.01000, label='Random', RoM=4.886552786236437 t1-t0=0.02588
+n_qubit=4, seed=0, K=0.02000, label='Random', RoM=2.8296107130091794 t1-t0=0.05096
+n_qubit=4, seed=0, K=0.03000, label='Random', RoM=2.3810048679658773 t1-t0=0.03479
+n_qubit=4, seed=0, K=0.04000, label='Random', RoM=2.266183747509694 t1-t0=0.04716
+n_qubit=4, seed=0, K=0.05000, label='Random', RoM=2.060910692995447 t1-t0=0.05180
+n_qubit=4, seed=0, K=0.06000, label='Random', RoM=2.0597573849987083 t1-t0=0.06285
+n_qubit=4, seed=0, K=0.07000, label='Random', RoM=1.8996412480073999 t1-t0=0.07238
+n_qubit=4, seed=0, K=0.08000, label='Random', RoM=1.8184395420432384 t1-t0=0.21603
+n_qubit=4, seed=0, K=0.09000, label='Random', RoM=1.821809616108066 t1-t0=0.11945
+n_qubit=4, seed=0, K=0.10000, label='Random', RoM=1.798676838887341 t1-t0=0.24262
+n_qubit=4, seed=0, K=0.01000, label='Overlap', RoM=4.673960567440599 t1-t0=0.03600
+n_qubit=4, seed=0, K=0.02000, label='Overlap', RoM=1.8766260943179502 t1-t0=0.04054
+n_qubit=4, seed=0, K=0.03000, label='Overlap', RoM=1.5042488422261875 t1-t0=0.08864
+n_qubit=4, seed=0, K=0.04000, label='Overlap', RoM=1.410217274315908 t1-t0=0.12689
+n_qubit=4, seed=0, K=0.05000, label='Overlap', RoM=1.3993901695603292 t1-t0=0.15515
+n_qubit=4, seed=0, K=0.06000, label='Overlap', RoM=1.390143612350426 t1-t0=0.09552
+n_qubit=4, seed=0, K=0.07000, label='Overlap', RoM=1.386923898110424 t1-t0=0.20937
+n_qubit=4, seed=0, K=0.08000, label='Overlap', RoM=1.3847326238071884 t1-t0=0.13187
+n_qubit=4, seed=0, K=0.09000, label='Overlap', RoM=1.3827454661783796 t1-t0=0.15207
+n_qubit=4, seed=0, K=0.10000, label='Overlap', RoM=1.3796759553718465 t1-t0=0.16631
+n_qubit=4, seed=0, K=0.01000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.02000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.03000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.04000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.05000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.06000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.07000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00004
+n_qubit=4, seed=0, K=0.08000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00001
+n_qubit=4, seed=0, K=0.09000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
+n_qubit=4, seed=0, K=0.10000, label='Exact RoM', RoM=1.3762097510033615 t1-t0=0.00000
