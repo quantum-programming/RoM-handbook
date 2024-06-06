@@ -180,7 +180,10 @@ def visualize_multiple_Amat(n_qubit: int, seed: int, ax: plt.Axes):
         linewidth=2,  # marker edge width
         ax=ax,
     )
-    ax.set_xlabel(r"Unnormalized Overlap $\mathrm{Tr}[\rho\sigma_j]$", fontsize=25)
+    ax.set_xlabel(
+        r"Unnormalized Overlap $2^n\mathrm{Tr}[\sigma_j\rho]$",
+        fontsize=25,
+    )
     ax.set_ylabel(r"Weight $x_j$", fontsize=25)
     ax.set_title("(a)", fontsize=25, x=-0.15, y=1.05)
 
