@@ -63,3 +63,7 @@ The tutorial notebook is available at [tutorial.ipynb](tutorial.ipynb).
 Copyright (c) 2023 Nobuyuki Yoshioka
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+If you have trouble, please feel free to contact us.
