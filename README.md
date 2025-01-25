@@ -5,7 +5,7 @@
 This repository provides source code for **Robustness of Magic(RoM)** calculation, **stabilizer fidelity** (for mixed state) calculation, and **generating all the pure stabilizer states** in Pauli-basis.
 
 This is also the supplemental material for our paper,
-**"Handbook for Efficiently Quantifying Robustness of Magic"**(2023).
+**"Handbook for Efficiently Quantifying Robustness of Magic"**(2023) ([qunatum](https://quantum-journal.org/papers/q-2024-09-05-1461/)).
 
 ## Contents
 
@@ -63,3 +63,7 @@ The tutorial notebook is available at [tutorial.ipynb](tutorial.ipynb).
 Copyright (c) 2023 Nobuyuki Yoshioka
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+If you have trouble, please feel free to contact us.
